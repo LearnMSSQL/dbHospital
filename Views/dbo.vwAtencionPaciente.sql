@@ -4,8 +4,8 @@ SET ANSI_NULLS ON
 GO
 CREATE VIEW [dbo].[vwAtencionPaciente]
 AS
-SELECT        PACIENTE.PACIENTE.NOMPAC, PACIENTE.PACIENTE.APEPATPAC, PACIENTE.PACIENTE.APEMATPAC, MEDICO.ESPECIALIDAD.NOMESP, MEDICO.MEDICO.NOMMED, MEDICO.MEDICO.APEPATMED, 
-                         MEDICO.MEDICO.APEMATMED
+SELECT        PACIENTE.PACIENTE.NOMPAC AS Nom_Paciente, PACIENTE.PACIENTE.APEPATPAC AS ApPat_Paciente, PACIENTE.PACIENTE.APEMATPAC AS ApMat_Paciente, MEDICO.ESPECIALIDAD.NOMESP AS Especialidad, 
+                         MEDICO.MEDICO.NOMMED AS Nom_Medico, MEDICO.MEDICO.APEPATMED AS ApPat_Medico, MEDICO.MEDICO.APEMATMED AS ApMat_Medico
 FROM            MEDICO.ESPECIALIDAD INNER JOIN
                          MEDICO.MEDICO_ESPECIALIDAD ON MEDICO.ESPECIALIDAD.CODESP = MEDICO.MEDICO_ESPECIALIDAD.CODESP INNER JOIN
                          MEDICO.MEDICO ON MEDICO.MEDICO_ESPECIALIDAD.CODMED = MEDICO.MEDICO.CODMED INNER JOIN
@@ -17,7 +17,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+         Configuration = "(H (1[41] 4[35] 2[20] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -85,50 +85,50 @@ Begin DesignProperties =
       Begin Tables = 
          Begin Table = "ESPECIALIDAD (MEDICO)"
             Begin Extent = 
-               Top = 6
-               Left = 38
-               Bottom = 119
-               Right = 208
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
-         Begin Table = "MEDICO (MEDICO)"
-            Begin Extent = 
-               Top = 82
-               Left = 222
-               Bottom = 212
-               Right = 392
+               Top = 0
+               Left = 553
+               Bottom = 113
+               Right = 746
             End
             DisplayFlags = 280
             TopColumn = 0
          End
          Begin Table = "MEDICO_ESPECIALIDAD (MEDICO)"
             Begin Extent = 
-               Top = 2
-               Left = 454
-               Bottom = 115
-               Right = 624
+               Top = 0
+               Left = 331
+               Bottom = 113
+               Right = 501
             End
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "PACIENTE (PACIENTE)"
+         Begin Table = "MEDICO (MEDICO)"
             Begin Extent = 
-               Top = 33
-               Left = 746
-               Bottom = 163
-               Right = 916
+               Top = 53
+               Left = 12
+               Bottom = 183
+               Right = 182
             End
             DisplayFlags = 280
             TopColumn = 0
          End
          Begin Table = "TURNO_PACIENTE (PACIENTE)"
             Begin Extent = 
-               Top = 120
-               Left = 456
-               Bottom = 233
-               Right = 626
+               Top = 114
+               Left = 332
+               Bottom = 227
+               Right = 502
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "PACIENTE (PACIENTE)"
+            Begin Extent = 
+               Top = 59
+               Left = 774
+               Bottom = 215
+               Right = 944
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -144,17 +144,17 @@ Begin DesignProperties =
    Begin CriteriaPane = 
       Begin ColumnWidths = 11
          Column = 1440
-         Alias = 900
-         Table = 1170
-         Output = 720
+         Alias = 1680
+         Table = 2190
+         Output = 1515
          Append = 1400
          NewValue = 1170
          SortType = 1350
          SortOrder = 1410
          GroupBy = 1350
-         ', 'SCHEMA', N'dbo', 'VIEW', N'vwAtencionPaciente', NULL, NULL
+       ', 'SCHEMA', N'dbo', 'VIEW', N'vwAtencionPaciente', NULL, NULL
 GO
-EXEC sp_addextendedproperty N'MS_DiagramPane2', N'Filter = 1350
+EXEC sp_addextendedproperty N'MS_DiagramPane2', N'  Filter = 1350
          Or = 1350
          Or = 1350
          Or = 1350
